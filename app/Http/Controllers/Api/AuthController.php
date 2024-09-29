@@ -30,7 +30,7 @@ class AuthController extends Controller
             'status' => 'success',
             'message' => 'User registered successfully',
             'data' => $user
-        ]);
+        ], 201);
 
 
     }
@@ -48,7 +48,7 @@ class AuthController extends Controller
             return response()->json([
                'status' => 'failed',
                'message' => 'Invalid credentials'
-            ]);
+            ], 401);
         }
 
         $token = $user->createToken('auth_token')->plainTextToken;
@@ -112,7 +112,7 @@ class AuthController extends Controller
             'status' => 'success',
             'message' => 'Restaurant registered successfully',
             'data' => $user
-        ]);
+        ], 201);
 
 
     }
@@ -150,7 +150,7 @@ class AuthController extends Controller
             'status' => 'success',
             'message' => 'Driver registered successfully',
             'data' => $user
-        ]);
+        ], 201);
 
 
     }
@@ -189,5 +189,5 @@ class AuthController extends Controller
         ]);
     }
 
-    
+
 }
